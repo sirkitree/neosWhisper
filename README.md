@@ -6,6 +6,10 @@ Utilize the OpenAI API to transcribe audio from the microphone, copying it to th
 
 ## Usage
 1. Set your OpenAI API key in your environment variables as `OPENAI_API_KEY`
+  * more info: 
+    * https://www.perplexity.ai/search/7442538c-2a75-44dd-aeec-ab3634a969e5?s=u
+    * https://openai.com/blog/openai-api/
+    * https://openai.com/docs/api-reference/authentication/
 2. Run `python main.py`
 
 ## License
