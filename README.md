@@ -12,6 +12,13 @@ Implements a websocket server which records microphone audio through PyAudio and
     * https://openai.com/docs/api-reference/authentication/
 2. Run `python main.py`
 
+### Within Neos
+1. Create a new websocket component
+2. Set the websocket URL to `ws://localhost:8765`
+3. Utilize the Websocket with LogiX
+ ![logix screenshot](./2023-04-10%2018.55.42.jpg)
+
+
 ## License
 MIT
 
