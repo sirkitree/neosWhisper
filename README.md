@@ -1,5 +1,5 @@
 # Neos Whisper
-Utilize the OpenAI API to transcribe audio from the microphone, copying it to the operating system clipboard for easy pasting.
+Implements a websocket server which records microphone audio through PyAudio and transcribes the recording through the OpenAI API the returns the transcription as a string over the websocket.
 
 ## Installation
 `pip install -r requirements.txt`
