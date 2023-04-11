@@ -22,6 +22,9 @@ It's also bundled with a tool tip in Neos. Here's the shared directory link:
 - neosrec:///U-sirkitree/R-0a530750-4176-464a-86c8-0cf0bf00c9d9
 
 Tip: For ease of use, after installation, you can run the .bat file (I like having a shortcut on my desktop to it) and then utilize the tool tip in Neos.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ORFDu8uGiIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## License
 MIT
 
