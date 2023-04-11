@@ -21,6 +21,7 @@ Implements a websocket server which records microphone audio through PyAudio and
 It's also bundled with a tool tip in Neos. Here's the shared directory link:
 - neosrec:///U-sirkitree/R-0a530750-4176-464a-86c8-0cf0bf00c9d9
 
+Tip: For ease of use, after installation, you can run the .bat file (I like having a shortcut on my desktop to it) and then utilize the tool tip in Neos.
 ## License
 MIT
 
