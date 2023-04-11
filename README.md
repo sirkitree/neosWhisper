@@ -27,7 +27,7 @@ Tip: For ease of use, after installation, you can run the .bat file (I like havi
 
 
 ## Specifications
-Please see [specs.md](./specs.md)
+Please see [spec.md](./spec.md)
 
 ## License
 MIT
