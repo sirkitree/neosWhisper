@@ -25,6 +25,10 @@ Tip: For ease of use, after installation, you can run the .bat file (I like havi
 
 [![video](https://img.youtube.com/vi/ORFDu8uGiIQ/0.jpg)](https://www.youtube.com/watch?v=ORFDu8uGiIQ)
 
+
+## Specifications
+Please see [specs.md](./specs.md)
+
 ## License
 MIT
 
