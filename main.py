@@ -17,9 +17,12 @@ async def record_and_transcribe(websocket, path):
     while True:
         # wait for a message from the client
         message = await websocket.recv()
+        print("Listening...")
 
         # check if message is 'start'
         if message == 'start':
+            print("Recording...")
+
             # when there is silence, write to file
             frames = []
             for i in range(0, int(44100 / 1024 * 5)):
@@ -39,10 +42,11 @@ async def record_and_transcribe(websocket, path):
 
             # send request to OpenAI API
             transcript = openai.Audio.transcribe("whisper-1", f)
+            print("Sending to OpenAI...")
 
             # print transcription
             transcription = transcript.text
-            print(transcription)
+            print("Transcript reveived: " + transcription)
 
             # put the transcription in the clipboard
             os.system(f'echo {transcription} | clip')
