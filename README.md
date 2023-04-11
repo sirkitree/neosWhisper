@@ -18,6 +18,8 @@ Implements a websocket server which records microphone audio through PyAudio and
 3. Utilize the Websocket with LogiX
  ![logix screenshot](./2023-04-10%2018.55.42.jpg)
 
+It's also bundled with a tool tip in Neos. Here's the shared directory link:
+- neosrec:///U-sirkitree/R-0a530750-4176-464a-86c8-0cf0bf00c9d9
 
 ## License
 MIT
