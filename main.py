@@ -21,7 +21,7 @@ async def record_and_transcribe(websocket, path):
 
         # check if message is 'start'
         if message == 'start':
-            print("Recording...")
+            print("Start received. Recording...")
 
             # when there is silence, write to file
             frames = []
@@ -46,10 +46,11 @@ async def record_and_transcribe(websocket, path):
 
             # print transcription
             transcription = transcript.text
-            print("Transcript reveived: " + transcription)
+            print("Transcript received: " + transcription)
 
             # put the transcription in the clipboard
             os.system(f'echo {transcription} | clip')
+            print("Pasted to clipboard.")
 
             # send transcription back to client
             await websocket.send(transcription)
