@@ -23,7 +23,7 @@ It's also bundled with a tool tip in Neos. Here's the shared directory link:
 
 Tip: For ease of use, after installation, you can run the .bat file (I like having a shortcut on my desktop to it) and then utilize the tool tip in Neos.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ORFDu8uGiIQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+[![video](https://img.youtube.com/vi/ORFDu8uGiIQ/0.jpg)](https://www.youtube.com/watch?v=ORFDu8uGiIQ)
 
 ## License
 MIT
