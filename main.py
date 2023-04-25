@@ -4,6 +4,17 @@ import wave
 import openai
 import asyncio
 import websockets
+import whisper
+import pkg_resources
+
+whisperInstalled = False
+try:
+    pkg_resources.get_distribution('openai-whisper')
+except pkg_resources.DistributionNotFound:
+    print('Package is not installed')
+else:
+    print('Package is installed')
+    # whisperInstalled = True
 
 # set OpenAI API key, getting it from the environment variable
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -37,15 +48,23 @@ async def record_and_transcribe(websocket, path):
             wf.writeframes(b''.join(frames))
             wf.close()
 
-            # open file
-            f = open("audio.wav", "rb")
-
-            # send request to OpenAI API
-            transcript = openai.Audio.transcribe("whisper-1", f)
-            print("Sending to OpenAI...")
+            # check to see if whisper is installed on the system locally
+            if whisperInstalled == True:
+                print('Using local whisper model...')
+                # use the local whisper model
+                model = whisper.load_model("tiny")
+                transcript = model.transcribe("audio.wav")
+                transcription = transcript["text"]
+            else:
+                # open file
+                f = open("audio.wav", "rb")
+                
+                # send request to OpenAI API
+                transcript = openai.Audio.transcribe("whisper-1", f)
+                print("Sending to OpenAI...")
+                transcription = transcript.text
 
             # print transcription
-            transcription = transcript.text
             print("Transcript received: " + transcription)
 
             # put the transcription in the clipboard

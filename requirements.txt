@@ -1,6 +1,6 @@
-aiohttp==3.7.4.post0
-asyncio==3.4.3
-numpy==1.20.3
-openai==0.10.3
-pyaudio==0.2.11
-websockets==9.1
+aiohttp==3.8.4
+numpy==1.23.5
+openai==0.27.4
+openai-whisper==20230314
+PyAudio==0.2.13
+websockets==11.0.1
