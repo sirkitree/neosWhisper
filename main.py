@@ -2,14 +2,12 @@ import os
 import wave
 import asyncio
 import pkg_resources
-import audioop
 import pyaudio
 import websockets
 import openai
-import whisper
 
 # check for lib installation
-libs = ['pyaudio', 'websockets', 'openai', 'whisper', 'asyncio']
+libs = ['pyaudio', 'websockets', 'openai', 'asyncio']
 while libs:
     try:
         lib = libs.pop()
