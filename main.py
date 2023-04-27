@@ -40,12 +40,13 @@ async def record_and_transcribe(websocket, path):
         if message == 'start':
             print("Start received. Recording...")
 
-            # when there is silence, write to file
+            # capture audio
+            max_duration = 10  # maximum recording duration in seconds
             frames = []
-            for i in range(0, int(44100 / 1024 * 5)):
+            for i in range(0, int(44100 / 1024 * max_duration)):
                 data = stream.read(1024)
                 frames.append(data)
-
+            
             # write to file
             wf = wave.open('audio.wav', 'wb')
             wf.setnchannels(1)
@@ -53,22 +54,14 @@ async def record_and_transcribe(websocket, path):
             wf.setframerate(44100)
             wf.writeframes(b''.join(frames))
             wf.close()
-
-            # check to see if whisper is installed on the system locally
-            if whisperInstalled == True:
-                print('Using local whisper model...')
-                # use the local whisper model
-                model = whisper.load_model("tiny")
-                transcript = model.transcribe("audio.wav")
-                transcription = transcript["text"]
-            else:
-                # open file
-                f = open("audio.wav", "rb")
-                
-                # send request to OpenAI API
-                transcript = openai.Audio.transcribe("whisper-1", f)
-                print("Sending to OpenAI...")
-                transcription = transcript.text
+            
+            # open file
+            f = open("audio.wav", "rb")
+            
+            # send request to OpenAI API
+            transcript = openai.Audio.transcribe("whisper-1", f)
+            print("Sending to OpenAI...")
+            transcription = transcript.text
 
             # print transcription
             print("Transcript received: " + transcription)
