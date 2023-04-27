@@ -1,23 +1,29 @@
 import os
-import pyaudio
 import wave
-import openai
 import asyncio
-import websockets
-import whisper
 import pkg_resources
+import audioop
+import pyaudio
+import websockets
+import openai
+import whisper
 
-whisperInstalled = False
-try:
-    pkg_resources.get_distribution('openai-whisper')
-except pkg_resources.DistributionNotFound:
-    print('Package is not installed')
-else:
-    print('Package is installed')
-    # whisperInstalled = True
+# check for lib installation
+libs = ['pyaudio', 'websockets', 'openai', 'whisper', 'asyncio']
+while libs:
+    try:
+        lib = libs.pop()
+        pkg_resources.get_distribution(lib)
+    except pkg_resources.DistributionNotFound:
+        print(f'{lib} is not installed. Please run "pip install {lib}"')
+    else:
+        print(f'{lib} is installed')
 
 # set OpenAI API key, getting it from the environment variable
 openai.api_key = os.getenv("OPENAI_API_KEY")
+if openai.api_key is None:
+    print("OPENAI_API_KEY environment variable is not set. Please see README for more information.")
+    exit()
 
 # capture audio from microphone using pyaudio
 audio = pyaudio.PyAudio()
